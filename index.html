@@ -1,81 +1,204 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Finsights by Kunal</title>
-  
-  <!-- Accessibility Meta -->
-  <meta name="description" content="Mathematical Models & Risk Frameworks by Finsights by Kunal">
-  
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      line-height: 1.6;
-      color: #1a1a1a;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Finsights by Kunal</title>
 
-    a {
-      color: #005fcc;
-    }
+<meta name="description" content="Finsights by Kunal - Mathematical Models, Structured Products & Risk Frameworks">
 
-    a:focus, button:focus {
-      outline: 3px solid #ffbf47;
-      outline-offset: 2px;
-    }
+<style>
 
-    header {
-      background: #ffffff;
-      border-bottom: 1px solid #ddd;
-      padding: 1rem;
-    }
+* {
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
 
-    nav ul {
-      display: flex;
-      gap: 1rem;
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      flex-wrap: wrap;
-    }
+body {
+font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+line-height:1.6;
+color:#1a1a1a;
+background:#ffffff;
+}
 
-    .container {
-      max-width: 1000px;
-      margin: auto;
-      padding: 1rem;
-    }
+.container {
+max-width:1100px;
+margin:auto;
+padding:20px;
+}
 
-    .hero {
-      padding: 2rem 0;
-    }
+/* Accessibility Focus */
 
-    .section {
-      padding: 2rem 0;
-      border-bottom: 1px solid #eee;
-    }
+a:focus, button:focus {
+outline:3px solid #005fcc;
+outline-offset:2px;
+}
 
-    footer {
-      background: #f5f5f5;
-      padding: 2rem 1rem;
-    }
+.skip-link {
+position:absolute;
+left:-999px;
+}
 
-    .skip-link {
-      position: absolute;
-      left: -999px;
-      top: auto;
-    }
+.skip-link:focus {
+left:10px;
+top:10px;
+background:black;
+color:white;
+padding:8px;
+z-index:1000;
+}
 
-    .skip-link:focus {
-      left: 0;
-      top: 0;
-      background: #000;
-      color: #fff;
-      padding: 8px;
-      z-index: 1000;
-    }
+/* Header */
 
-  </style>
+header {
+border-bottom:1px solid #eee;
+background:white;
+position:sticky;
+top:0;
+}
+
+nav {
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 0;
+}
+
+nav ul {
+display:flex;
+gap:25px;
+list-style:none;
+}
+
+nav a {
+text-decoration:none;
+color:#333;
+font-weight:500;
+}
+
+/* Hero */
+
+.hero {
+padding:80px 0;
+text-align:center;
+background:#f8fafc;
+}
+
+.hero h1 {
+font-size:36px;
+margin-bottom:15px;
+}
+
+.hero p {
+font-size:18px;
+max-width:700px;
+margin:auto;
+color:#555;
+}
+
+/* Sections */
+
+.section {
+padding:60px 0;
+}
+
+.section h2 {
+font-size:28px;
+margin-bottom:20px;
+text-align:center;
+}
+
+/* Cards */
+
+.cards {
+display:grid;
+grid-template-columns:repeat(auto-fit, minmax(280px,1fr));
+gap:25px;
+margin-top:30px;
+}
+
+.card {
+border:1px solid #eee;
+padding:25px;
+border-radius:8px;
+background:white;
+transition:0.2s ease;
+}
+
+.card:hover {
+box-shadow:0 5px 20px rgba(0,0,0,0.05);
+}
+
+.card h3 {
+margin-bottom:10px;
+}
+
+/* About */
+
+.about {
+max-width:800px;
+margin:auto;
+text-align:center;
+}
+
+/* Contact */
+
+form {
+max-width:500px;
+margin:auto;
+}
+
+input, textarea {
+width:100%;
+padding:12px;
+border:1px solid #ddd;
+border-radius:5px;
+margin-bottom:15px;
+}
+
+button {
+background:#005fcc;
+color:white;
+padding:12px 25px;
+border:none;
+border-radius:5px;
+cursor:pointer;
+}
+
+button:hover {
+background:#004bb5;
+}
+
+/* Footer */
+
+footer {
+background:#f5f5f5;
+padding:40px 0;
+margin-top:40px;
+}
+
+footer ul {
+list-style:none;
+display:flex;
+flex-wrap:wrap;
+gap:15px;
+justify-content:center;
+margin-bottom:15px;
+}
+
+footer a {
+text-decoration:none;
+color:#333;
+}
+
+footer p {
+text-align:center;
+color:#666;
+}
+
+</style>
+
 </head>
 
 <body>
@@ -83,112 +206,146 @@
 <a href="#main" class="skip-link">Skip to main content</a>
 
 <header>
-  <div class="container">
-    <h1>Finsights by Kunal</h1>
-    <nav aria-label="Main Navigation">
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#products">Products</a></li>
-        <li><a href="#approach">Approach</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </div>
+<div class="container">
+<nav aria-label="Main Navigation">
+
+<h2>Finsights by Kunal</h2>
+
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#products">Products</a></li>
+<li><a href="#approach">Approach</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+</nav>
+</div>
 </header>
 
 <main id="main">
 
-<section id="home" class="hero container">
-  <h2>Mathematical Models & Risk Frameworks</h2>
-  <p>
-    Finsights by Kunal focuses on developing structured investment frameworks 
-    backed by disciplined risk management and quantitative methodologies.
-  </p>
+<section class="hero" id="home">
+<div class="container">
+
+<h1>Mathematical Models & Risk Frameworks</h1>
+
+<p>
+Finsights by Kunal focuses on structured investment frameworks built using
+quantitative research and disciplined risk management.
+</p>
+
+</div>
 </section>
 
-<section id="products" class="section container">
-  <h2>Product Catalogue</h2>
+<section class="section" id="products">
+<div class="container">
 
-  <article>
-    <h3>SAR Strategy</h3>
-    <p>
-      Systematic allocation strategy designed to optimize risk-adjusted returns.
-    </p>
-  </article>
+<h2>Product Catalogue</h2>
 
-  <article>
-    <h3>PP-MLD (Investor)</h3>
-    <p>
-      Market-linked debenture structures tailored for investor portfolios.
-    </p>
-  </article>
+<div class="cards">
 
-  <article>
-    <h3>PP-MLD (Issuer)</h3>
-    <p>
-      Structured financing solutions for issuers.
-    </p>
-  </article>
+<div class="card">
+<h3>SAR Strategy</h3>
+<p>
+Systematic allocation strategy designed to optimize risk adjusted returns.
+</p>
+</div>
 
+<div class="card">
+<h3>PP‑MLD (Investor)</h3>
+<p>
+Market linked debenture structures designed for investor portfolios.
+</p>
+</div>
+
+<div class="card">
+<h3>PP‑MLD (Issuer)</h3>
+<p>
+Structured financing solutions for issuers.
+</p>
+</div>
+
+</div>
+
+</div>
 </section>
 
-<section id="approach" class="section container">
-  <h2>Our Approach</h2>
-  <p>
-    We focus on systematic and disciplined frameworks combining mathematical models 
-    and market insights.
-  </p>
+<section class="section" id="approach">
+<div class="container">
+
+<h2>Our Approach</h2>
+
+<div class="about">
+<p>
+We combine mathematical models, disciplined frameworks and structured
+product expertise to create robust investment solutions.
+</p>
+</div>
+
+</div>
 </section>
 
-<section id="about" class="section container">
-  <h2>About Kunal Shah</h2>
-  <p>
-    Independent Research Analyst focused on structured products and risk frameworks.
-  </p>
+<section class="section" id="about">
+<div class="container">
 
-  <p>
-    SEBI Registration Details: [To be added]
-  </p>
+<h2>About Kunal Shah</h2>
 
+<div class="about">
+<p>
+Independent Research Analyst focused on structured products,
+risk frameworks and quantitative investment methodologies.
+</p>
+
+<p>
+SEBI Registration Details: To be added
+</p>
+
+</div>
+
+</div>
 </section>
 
-<section id="contact" class="section container">
-  <h2>Contact</h2>
-  
-  <form>
-    <label for="name">Name</label><br>
-    <input id="name" name="name" type="text"><br><br>
+<section class="section" id="contact">
+<div class="container">
 
-    <label for="email">Email</label><br>
-    <input id="email" name="email" type="email"><br><br>
+<h2>Contact</h2>
 
-    <label for="message">Message</label><br>
-    <textarea id="message" name="message"></textarea><br><br>
+<form>
+<label for="name">Name</label>
+<input id="name" type="text">
 
-    <button type="submit">Submit</button>
-  </form>
+<label for="email">Email</label>
+<input id="email" type="email">
 
+<label for="message">Message</label>
+<textarea id="message"></textarea>
+
+<button type="submit">Submit</button>
+</form>
+
+</div>
 </section>
 
 </main>
 
 <footer>
-  <div class="container">
-    <h2>Legal</h2>
-    <ul>
-      <li><a href="#">Privacy Policy</a></li>
-      <li><a href="#">Terms of Use</a></li>
-      <li><a href="#">Refund Policy</a></li>
-      <li><a href="#">Disclosures</a></li>
-      <li><a href="#">Investor Charter</a></li>
-      <li><a href="#">Accessibility Statement</a></li>
-    </ul>
+<div class="container">
 
-    <p>
-      © Finsights by Kunal
-    </p>
-  </div>
+<ul>
+<li><a href="#">Privacy Policy</a></li>
+<li><a href="#">Terms of Use</a></li>
+<li><a href="#">Refund Policy</a></li>
+<li><a href="#">Disclosures</a></li>
+<li><a href="#">Investor Charter</a></li>
+<li><a href="#">Accessibility</a></li>
+</ul>
+
+<p>
+© Finsights by Kunal
+</p>
+
+</div>
 </footer>
 
 </body>
