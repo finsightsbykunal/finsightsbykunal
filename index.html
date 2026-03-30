@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Finsights by Kunal</title>
-
 <meta name="description" content="Finsights by Kunal - Mathematical Models, Structured Products & Risk Frameworks">
 
 <style>
@@ -23,12 +22,12 @@ background:#ffffff;
 }
 
 .container {
-max-width:1100px;
+max-width:1150px;
 margin:auto;
 padding:20px;
 }
 
-/* Accessibility Focus */
+/* Accessibility */
 
 a:focus, button:focus {
 outline:3px solid #005fcc;
@@ -52,10 +51,11 @@ z-index:1000;
 /* Header */
 
 header {
+background:#ffffff;
 border-bottom:1px solid #eee;
-background:white;
 position:sticky;
 top:0;
+z-index:999;
 }
 
 nav {
@@ -63,6 +63,11 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 padding:15px 0;
+}
+
+.logo {
+font-weight:600;
+font-size:20px;
 }
 
 nav ul {
@@ -77,16 +82,20 @@ color:#333;
 font-weight:500;
 }
 
+nav a:hover {
+color:#005fcc;
+}
+
 /* Hero */
 
 .hero {
-padding:80px 0;
+padding:100px 0;
+background:linear-gradient(180deg, #f7f9fc 0%, #ffffff 100%);
 text-align:center;
-background:#f8fafc;
 }
 
 .hero h1 {
-font-size:36px;
+font-size:42px;
 margin-bottom:15px;
 }
 
@@ -97,16 +106,38 @@ margin:auto;
 color:#555;
 }
 
-/* Sections */
-
-.section {
-padding:60px 0;
+.hero-btn {
+margin-top:25px;
+display:inline-block;
+padding:12px 25px;
+background:#005fcc;
+color:white;
+text-decoration:none;
+border-radius:6px;
 }
 
-.section h2 {
-font-size:28px;
-margin-bottom:20px;
+.hero-btn:hover {
+background:#004bb5;
+}
+
+/* Section */
+
+.section {
+padding:70px 0;
+}
+
+.section-title {
 text-align:center;
+margin-bottom:40px;
+}
+
+.section-title h2 {
+font-size:30px;
+margin-bottom:10px;
+}
+
+.section-title p {
+color:#666;
 }
 
 /* Cards */
@@ -114,30 +145,47 @@ text-align:center;
 .cards {
 display:grid;
 grid-template-columns:repeat(auto-fit, minmax(280px,1fr));
-gap:25px;
-margin-top:30px;
+gap:30px;
 }
 
 .card {
-border:1px solid #eee;
-padding:25px;
-border-radius:8px;
+padding:30px;
+border-radius:10px;
 background:white;
-transition:0.2s ease;
+border:1px solid #eee;
+transition:0.25s ease;
 }
 
 .card:hover {
-box-shadow:0 5px 20px rgba(0,0,0,0.05);
+transform:translateY(-5px);
+box-shadow:0 10px 25px rgba(0,0,0,0.06);
 }
 
 .card h3 {
 margin-bottom:10px;
+font-size:20px;
+}
+
+.card p {
+color:#555;
+}
+
+/* Approach */
+
+.approach {
+background:#f7f9fc;
+}
+
+.approach-content {
+max-width:750px;
+margin:auto;
+text-align:center;
 }
 
 /* About */
 
-.about {
-max-width:800px;
+.about-content {
+max-width:750px;
 margin:auto;
 text-align:center;
 }
@@ -145,16 +193,24 @@ text-align:center;
 /* Contact */
 
 form {
-max-width:500px;
+max-width:550px;
 margin:auto;
+}
+
+label {
+font-weight:500;
 }
 
 input, textarea {
 width:100%;
 padding:12px;
+border-radius:6px;
 border:1px solid #ddd;
-border-radius:5px;
 margin-bottom:15px;
+}
+
+textarea {
+min-height:120px;
 }
 
 button {
@@ -162,7 +218,7 @@ background:#005fcc;
 color:white;
 padding:12px 25px;
 border:none;
-border-radius:5px;
+border-radius:6px;
 cursor:pointer;
 }
 
@@ -173,28 +229,46 @@ background:#004bb5;
 /* Footer */
 
 footer {
-background:#f5f5f5;
-padding:40px 0;
+background:#f7f9fc;
+padding:50px 0;
 margin-top:40px;
 }
 
-footer ul {
-list-style:none;
+.footer-links {
 display:flex;
-flex-wrap:wrap;
-gap:15px;
 justify-content:center;
-margin-bottom:15px;
+flex-wrap:wrap;
+gap:20px;
+margin-bottom:20px;
 }
 
-footer a {
+.footer-links a {
 text-decoration:none;
 color:#333;
+}
+
+.footer-links a:hover {
+color:#005fcc;
 }
 
 footer p {
 text-align:center;
 color:#666;
+}
+
+/* Responsive */
+
+@media (max-width:768px) {
+
+.hero h1 {
+font-size:32px;
+}
+
+nav {
+flex-direction:column;
+gap:10px;
+}
+
 }
 
 </style>
@@ -207,9 +281,10 @@ color:#666;
 
 <header>
 <div class="container">
+
 <nav aria-label="Main Navigation">
 
-<h2>Finsights by Kunal</h2>
+<div class="logo">Finsights by Kunal</div>
 
 <ul>
 <li><a href="#home">Home</a></li>
@@ -220,6 +295,7 @@ color:#666;
 </ul>
 
 </nav>
+
 </div>
 </header>
 
@@ -231,9 +307,10 @@ color:#666;
 <h1>Mathematical Models & Risk Frameworks</h1>
 
 <p>
-Finsights by Kunal focuses on structured investment frameworks built using
-quantitative research and disciplined risk management.
+Structured investment frameworks built using quantitative research and disciplined risk management.
 </p>
+
+<a href="#products" class="hero-btn">Explore Products</a>
 
 </div>
 </section>
@@ -241,7 +318,10 @@ quantitative research and disciplined risk management.
 <section class="section" id="products">
 <div class="container">
 
+<div class="section-title">
 <h2>Product Catalogue</h2>
+<p>Structured solutions designed for investors and issuers</p>
+</div>
 
 <div class="cards">
 
@@ -255,14 +335,14 @@ Systematic allocation strategy designed to optimize risk adjusted returns.
 <div class="card">
 <h3>PP‑MLD (Investor)</h3>
 <p>
-Market linked debenture structures designed for investor portfolios.
+Market linked debenture structures tailored for investor portfolios.
 </p>
 </div>
 
 <div class="card">
 <h3>PP‑MLD (Issuer)</h3>
 <p>
-Structured financing solutions for issuers.
+Structured financing solutions designed for issuers.
 </p>
 </div>
 
@@ -271,15 +351,17 @@ Structured financing solutions for issuers.
 </div>
 </section>
 
-<section class="section" id="approach">
+<section class="section approach" id="approach">
 <div class="container">
 
+<div class="section-title">
 <h2>Our Approach</h2>
+</div>
 
-<div class="about">
+<div class="approach-content">
 <p>
-We combine mathematical models, disciplined frameworks and structured
-product expertise to create robust investment solutions.
+We combine mathematical models, disciplined frameworks and structured product expertise
+ to create robust investment solutions.
 </p>
 </div>
 
@@ -289,13 +371,17 @@ product expertise to create robust investment solutions.
 <section class="section" id="about">
 <div class="container">
 
+<div class="section-title">
 <h2>About Kunal Shah</h2>
+</div>
 
-<div class="about">
+<div class="about-content">
 <p>
-Independent Research Analyst focused on structured products,
-risk frameworks and quantitative investment methodologies.
+Independent Research Analyst focused on structured products, risk frameworks and
+quantitative investment methodologies.
 </p>
+
+<br>
 
 <p>
 SEBI Registration Details: To be added
@@ -309,17 +395,19 @@ SEBI Registration Details: To be added
 <section class="section" id="contact">
 <div class="container">
 
+<div class="section-title">
 <h2>Contact</h2>
+</div>
 
 <form>
 <label for="name">Name</label>
-<input id="name" type="text">
+<input id="name" type="text" required>
 
 <label for="email">Email</label>
-<input id="email" type="email">
+<input id="email" type="email" required>
 
 <label for="message">Message</label>
-<textarea id="message"></textarea>
+<textarea id="message" required></textarea>
 
 <button type="submit">Submit</button>
 </form>
@@ -332,14 +420,14 @@ SEBI Registration Details: To be added
 <footer>
 <div class="container">
 
-<ul>
-<li><a href="#">Privacy Policy</a></li>
-<li><a href="#">Terms of Use</a></li>
-<li><a href="#">Refund Policy</a></li>
-<li><a href="#">Disclosures</a></li>
-<li><a href="#">Investor Charter</a></li>
-<li><a href="#">Accessibility</a></li>
-</ul>
+<div class="footer-links">
+<a href="#">Privacy Policy</a>
+<a href="#">Terms of Use</a>
+<a href="#">Refund Policy</a>
+<a href="#">Disclosures</a>
+<a href="#">Investor Charter</a>
+<a href="#">Accessibility</a>
+</div>
 
 <p>
 © Finsights by Kunal
