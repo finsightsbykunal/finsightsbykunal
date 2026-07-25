@@ -1,447 +1,265 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Finsights by Kunal</title>
-<meta name="description" content="Finsights by Kunal - Structured Products, Quantitative Models & Risk Frameworks">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finsights by Kunal | Home</title>
+    <style>
+        /* Aesthetics & Typography */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            color: #111111;
+            background-color: #ffffff;
+        }
 
-<style>
+        /* Focus state accessibility */
+        a:focus, summary:focus {
+            outline: 3px solid #0056b3 !important;
+            outline-offset: 2px;
+        }
 
-*{margin:0;padding:0;box-sizing:border-box}
+        /* Navigation Bar */
+        nav {
+            background-color: #003366; /* Deep Professional Blue */
+            padding: 1rem;
+        }
 
-body{
-font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;
-line-height:1.6;
-color:#1a1a1a;
-background:#ffffff
-}
+        nav ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap; /* Ensures links wrap on smaller screens */
+            gap: 15px;
+            margin: 0;
+            padding: 0;
+            justify-content: center;
+        }
 
-.container{
-max-width:1150px;
-margin:auto;
-padding:20px
-}
+        nav a {
+            color: #ffffff;
+            text-decoration: underline;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
 
-/* Accessibility */
+        nav a:hover {
+            text-decoration: underline;
+        }
 
-a:focus,button:focus,input:focus,textarea:focus{
-outline:3px solid #0a58ca;
-outline-offset:2px
-}
+        /* Hero Section */
+        .hero {
+            background-color: #ffffff;
+            padding: 100px 20px;
+            text-align: center;
+            border-bottom: 1px solid #eaeaea;
+        }
 
-.skip-link{
-position:absolute;
-left:-999px
-}
+        .hero-title {
+            font-size: 3.5rem;
+            margin: 0;
+            letter-spacing: 1px;
+        }
 
-.skip-link:focus{
-left:10px;
-top:10px;
-background:black;
-color:white;
-padding:8px;
-z-index:1000
-}
+        .hero-tagline {
+            font-size: 1.25rem;
+            margin-top: 10px;
+            font-style: italic;
+        }
 
-/* Header */
-
-header{
-background:white;
-border-bottom:1px solid #eee;
-position:sticky;
-top:0;
-z-index:999
-}
-
-nav{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:15px 0
-}
-
-.logo{
-font-weight:600;
-font-size:20px;
-color:#0a2540
-}
-
-nav ul{
-display:flex;
-gap:25px;
-list-style:none
-}
-
-nav a{
-text-decoration:none;
-color:#333;
-font-weight:500
-}
-
-nav a:hover{color:#0a58ca}
-
-/* Hero */
-
-.hero{
-padding:110px 0;
-background:linear-gradient(180deg,#f5f8ff 0%,#ffffff 100%);
-text-align:center
-}
-
-.hero h1{
-font-size:44px;
-margin-bottom:15px;
-color:#0a2540
-}
-
-.hero p{
-font-size:18px;
-max-width:720px;
-margin:auto;
-color:#555
-}
-
-.hero-btn{
-margin-top:25px;
-display:inline-block;
-padding:13px 28px;
-background:#0a58ca;
-color:white;
-text-decoration:none;
-border-radius:6px;
-font-weight:500
-}
-
-.hero-btn:hover{background:#084298}
-
-/* Section */
-
-.section{padding:80px 0}
-
-.section-title{
-text-align:center;
-margin-bottom:45px
-}
-
-.section-title h2{
-font-size:32px;
-margin-bottom:10px;
-color:#0a2540
-}
-
-.section-title p{color:#666}
-
-/* Cards */
-
-.cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:30px
-}
-
-.card{
-padding:30px;
-border-radius:12px;
-background:white;
-border:1px solid #eee;
-transition:.25s ease
-}
-
-.card:hover{
-transform:translateY(-6px);
-box-shadow:0 12px 28px rgba(0,0,0,.06)
-}
-
-.card h3{
-margin-bottom:10px;
-font-size:20px;
-color:#0a2540
-}
-
-.card p{color:#555}
-
-/* Highlight Section */
-
-.highlight{
-background:#f7f9fc
-}
-
-.highlight-box{
-max-width:850px;
-margin:auto;
-text-align:center
-}
-
-/* About */
-
-.about-content{
-max-width:750px;
-margin:auto;
-text-align:center
-}
-
-/* Disclosure */
-
-.disclosure{
-background:#f7f9fc
-}
-
-.disclosure-box{
-max-width:850px;
-margin:auto;
-font-size:14px;
-color:#444
-}
-
-/* Contact */
-
-form{
-max-width:550px;
-margin:auto
-}
-
-label{font-weight:500}
-
-input,textarea{
-width:100%;
-padding:12px;
-border-radius:6px;
-border:1px solid #ddd;
-margin-bottom:15px
-}
-
-textarea{min-height:120px}
-
-button{
-background:#0a58ca;
-color:white;
-padding:12px 25px;
-border:none;
-border-radius:6px;
-cursor:pointer
-}
-
-button:hover{background:#084298}
-
-/* Footer */
-
-footer{
-background:#0a2540;
-color:white;
-padding:55px 0;
-margin-top:40px
-}
-
-.footer-links{
-display:flex;
-justify-content:center;
-flex-wrap:wrap;
-gap:22px;
-margin-bottom:20px
-}
-
-.footer-links a{
-text-decoration:none;
-color:#dbe6ff
-}
-
-.footer-links a:hover{color:white}
-
-footer p{text-align:center;color:#cbd5e1}
-
-/* Responsive */
-
-@media(max-width:768px){
-.hero h1{font-size:32px}
-nav{flex-direction:column;gap:10px}
-}
-
-</style>
+        main {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+    </style>
 </head>
-
 <body>
 
-<a href="#main" class="skip-link">Skip to main content</a>
+    <nav aria-label="Main Navigation" style="background-color: #003366; padding: 5px 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; min-height: 80px;">
+    
+    <div class="nav-logo" style="display: flex; align-items: center;">
+        <a href="index.html" style="display: flex; align-items: center; text-decoration: none;">
+            <img src="images/logo-transparent.png" alt="Finsights by Kunal Logo" 
+                 style="height: 100px; width: auto; display: block; margin-top: 5px; margin-bottom: 5px;"> 
+        </a>
+    </div>
 
-<header>
-<div class="container">
-<nav aria-label="Main Navigation">
-<div class="logo">Finsights by Kunal</div>
-<ul>
-<li><a href="#home">Home</a></li>
-<li><a href="#products">Products</a></li>
-<li><a href="#approach">Approach</a></li>
-<li><a href="#about">About</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
+    <details style="position: relative;">
+        <summary style="color: #ffffff; cursor: pointer; font-weight: bold; padding: 8px 15px; list-style: none; border: 2px solid #ffffff; border-radius: 4px; display: inline-block;">
+            LINKS &#9662;
+        </summary>
+        <ul style="list-style: none; background-color: #ffffff; padding: 15px; margin: 10px 0 0 0; position: absolute; right: 0; width: 220px; box-shadow: 0px 8px 16px rgba(0,0,0,0.3); border: 1px solid #003366; border-radius: 4px; z-index: 1001; display: flex; flex-direction: column; gap: 12px;">
+            <!-- VISUAL FIX: Explicit underline formatting for dropdown links (WCAG 1.4.1) -->
+            <li><a href="privacy.html" style="color: #003366; text-decoration: underline; font-size: 0.95rem; font-weight: 600;">Privacy Policy</a></li>
+            <li><a href="grievance.html" style="color: #003366; text-decoration: underline; font-size: 0.95rem; font-weight: 600;">Grievance Redressal</a></li>
+            <li><a href="complaints.html" style="color: #003366; text-decoration: underline; font-size: 0.95rem; font-weight: 600;">Investor Complaints</a></li>
+            <li><a href="terms.html" style="color: #003366; text-decoration: underline; font-size: 0.95rem; font-weight: 600;">Terms of Use</a></li>
+            <li><a href="refund.html" style="color: #003366; text-decoration: underline; font-size: 0.95rem; font-weight: 600;">Refund Policy</a></li>
+            <li><a href="charter.html" style="color: #003366; text-decoration: underline; font-size: 0.95rem; font-weight: 600;">Investor Charter</a></li>
+            <li><a href="disclaimer.html" style="color: #003366; text-decoration: underline; font-size: 0.95rem; font-weight: 600;">Disclosures/Disclaimer</a></li>
+            <li><a href="accessibility.html" style="color: #003366; text-decoration: underline; font-size: 0.95rem; font-weight: 600;">Accessibility Issues</a></li>
+        </ul>
+    </details>
 </nav>
-</div>
-</header>
 
-<main id="main">
+    <main id="main-content">
+        <section class="hero" style="padding: 80px 20px; text-align: center; background-color: #ffffff;">
+    <div style="max-width: 900px; margin: 0 auto;">
+        
+        <p style="font-size: 1.2rem; letter-spacing: 4px; text-transform: uppercase; color: #222222; margin-bottom: 10px; font-weight: 600;">
+            Mathematical Models and Risk Frameworks
+        </p>
 
-<section class="hero" id="home">
-<div class="container">
-<h1>Structured Products & Quantitative Investment Frameworks</h1>
-<p>
-Independent research focused on mathematical models, risk frameworks and structured investment solutions.
-</p>
-<a href="#products" class="hero-btn">Explore Solutions</a>
-</div>
+        <h1 style="font-size: 3rem; color: #003366; margin: 0; line-height: 1.1; font-weight: 800; border-top: 2px solid #003366; border-bottom: 2px solid #003366; display: inline-block; padding: 15px 0;">
+            Minimum Volatility, Optimal Returns
+        </h1>
+
+        <p style="font-size: 1.3rem; color: #222222; margin-top: 20px; font-weight: 600; font-style: italic;">
+            B2B Research: AIF-III, MFs, NBFCs, UHNIs
+        </p>
+        
+    </div>
 </section>
 
-<section class="section" id="products">
-<div class="container">
-<div class="section-title">
-<h2>Solutions</h2>
-<p>Institutional grade structured solutions</p>
-</div>
+        <section style="padding: 60px 20px;">
+            <h2 style="text-align: center; color: #003366; margin-bottom: 40px;">Our Specialized Products</h2>
+            
+            <div style="display: flex; flex-wrap: wrap; gap: 30px; justify-content: center;">
+                
+                <article style="flex: 1; min-width: 300px; max-width: 350px; border: 1px solid #ccc; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                    <div style="padding: 20px;">
+                        <h3 style="color: #003366; margin-top: 0;">Market Linked Debentures</h3>
+                        <p style="font-size: 0.95rem; color: #111111;">We design customised Market Linked Debenture (MLD) structures for corporates, NBFCs, and stock brokers to significantly reduce borrowing costs. Simultaneously, we create investor offerings with superior risk-adjusted return profiles, delivering a win-win for both issuers and investors.</p>
+                    </div>
+                </article>
 
-<div class="cards">
-<div class="card">
-<h3>SAR Strategy</h3>
-<p>
-Systematic allocation strategy focused on risk adjusted returns and disciplined portfolio construction.
-</p>
-</div>
+                <article style="flex: 1; min-width: 300px; max-width: 350px; border: 1px solid #ccc; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                    <div style="padding: 20px;">
+                        <h3 style="color: #003366; margin-top: 0;">Stop and Reverse systems (SARs)</h3>
+                        <p style="font-size: 0.95rem; color: #111111;">We offer research on a proprietary, non-predictive strategy (SAR) based purely on price action. This long-short framework is well-suited for AIF Category III structures and Mutual Fund SIFs.</p>
+                    </div>
+                </article>
 
-<div class="card">
-<h3>PP‑MLD (Investor)</h3>
-<p>
-Capital protected and participation oriented structured products designed for investors.
-</p>
-</div>
+                <article style="flex: 1; min-width: 300px; max-width: 350px; border: 1px solid #ccc; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                    <div style="padding: 20px;">
+                        <h3 style="color: #003366; margin-top: 0;">Asset Sequencing Framework</h3>
+                        <p style="font-size: 0.95rem; color: #111111;">A multi-asset strategy designed for Systematic Withdrawal Plans, targeting 8.5%–11% post-tax, post-fee returns based on investor risk appetite. Built on the principle of asset sequencing, the framework is robust and well-suited for AIF Category III or Fund-of-Funds structures.</p>
+                    </div>
+                </article>
 
-<div class="card">
-<h3>PP‑MLD (Issuer)</h3>
-<p>
-Structured financing solutions designed to optimize borrowing cost and investor participation.
-</p>
-</div>
-</div>
-</div>
-</section>
+            </div>
+        </section>
 
-<section class="section highlight" id="approach">
-<div class="container">
-<div class="section-title">
-<h2>Our Approach</h2>
-</div>
-<div class="highlight-box">
-<p>
-We combine quantitative research, structured products expertise and disciplined risk management
-frameworks to build robust and scalable investment solutions.
-</p>
-</div>
-</div>
-</section>
+        <!-- VISUAL FIX: Text contrast updated to #111111 (WCAG 1.4.3) -->
+        <section style="padding: 60px 20px; background-color: #f0f4f8; border-radius: 8px; margin-top: 20px; border: 1px solid #a3b8cc;">
+            <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 40px; justify-content: center;">
+                
+                <div style="flex: 1; min-width: 280px; max-width: 350px; margin-right: 40px; overflow: hidden; border: 5px solid #003366; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+                    <img src="images/portrait.JPG" alt="Portrait of Kunal Shah" 
+                         style="width: 110%; height: 400px; object-fit: cover; object-position: center; margin-left: -5%; display: block;">
+                </div>
 
-<section class="section" id="about">
-<div class="container">
-<div class="section-title">
-<h2>About</h2>
-</div>
+                <div style="flex: 2; min-width: 300px;">
+                    <h2 style="color: #003366; margin-top: 0;">Kunal Shah</h2>
+                    <p style="font-size: 1.1rem; line-height: 1.8; color: #111111;">
+                        Having completed Post Graduation from IIT Bombay, Kunal has 15 years of experience in the field of Quant strategy development. 
+                    </p>
+                    <p style="font-size: 1.1rem; line-height: 1.8; color: #111111;">
+                        Kunal has played an instrumental role to set up a proprietary trading desk for one of the largest proprietary broker in India. 
+                    </p>
+                    <p style="font-size: 1.1rem; line-height: 1.8; color: #111111;">
+                        His firm, Bivestors Pvt. Ltd. has designed an innovative derivative contract with widespread use - cases and is currently applying to SEBI for a RECOGNISED STOCK EXCHANGE license
+                    </p>
+                </div>
 
-<div class="about-content">
-<p>
-Finsights by Kunal focuses on structured investment solutions, mathematical frameworks and
-risk driven portfolio design.
-</p>
+            </div>
+        </section>
 
-<br>
+        <section style="padding: 60px 20px;">
+            <div style="display: flex; flex-wrap: wrap; gap: 30px; justify-content: space-between;">
+                
+                <div style="flex: 1; min-width: 280px; background-color: #ffffff; border-left: 4px solid #003366; padding-left: 20px;">
+                    <h3 style="color: #003366; margin-top: 0;">SEBI Registration</h3>
+                    <p style="font-size: 0.95rem; color: #111111; margin-bottom: 5px;"><strong>Registration Name:</strong> Kunal Hasmukhlal Shah</p>
+                    <p style="font-size: 0.95rem; color: #111111; margin-bottom: 5px;"><strong>Registration No:</strong> INH000012908</p>
+                    <p style="font-size: 0.95rem; color: #111111;"><strong>Type:</strong> Research Analyst</p>
+                </div>
 
-<p>
-Founder: Kunal Shah
-</p>
+                <div style="flex: 1; min-width: 280px; background-color: #ffffff; border-left: 4px solid #003366; padding-left: 20px;">
+                    <h3 style="color: #003366; margin-top: 0;">Office Address</h3>
+                    <address style="font-style: normal; font-size: 0.95rem; color: #111111; line-height: 1.6;">
+                        B-Wing, 1402, Neel Tower,<br>
+                        Devidas Cross Lane,<br>
+                        Borivali (West),<br>
+                        Mumbai - 400103.
+                    </address>
+                </div>
 
-<p>
-SEBI Registration: (To be updated)
-</p>
+                <div style="flex: 1; min-width: 280px; background-color: #ffffff; border-left: 4px solid #003366; padding-left: 20px;">
+                    <h3 style="color: #003366; margin-top: 0;">SEBI Local Office</h3>
+                    <address style="font-style: normal; font-size: 0.95rem; color: #111111; line-height: 1.6;">
+                        SEBI Bhavan, BKC,<br>
+                        Plot No.C4-A, 'G' Block,<br>
+                        Bandra-Kurla Complex,<br>
+                        Bandra (E),<br>
+                        Mumbai - 400051.
+                    </address>
+                </div>
 
-</div>
+            </div>
+        </section>
+    </main>
 
-</div>
-</section>
+    <!-- VISUAL FIX: Footer link contrast updated to high-contrast cyan-blue (#66c2ff over #002244, WCAG 1.4.3) -->
+    <footer style="background-color: #002244; color: #ffffff; padding: 40px 20px; margin-top: 40px; border-radius: 8px 8px 0 0;">
+        <div style="display: flex; flex-wrap: wrap; gap: 40px; justify-content: space-between;">
+            
+            <div style="flex: 1; min-width: 300px;">
+                <h3 style="border-bottom: 1px solid #ffffff44; padding-bottom: 10px;">Contact Information</h3>
+                <p><strong>Email:</strong> <a href="mailto:kunal.finresearch@gmail.com" style="color: #66c2ff; text-decoration: underline; font-weight: bold;">kunal.finresearch@gmail.com</a></p>
+                <p><strong>Mobile:</strong> +91-9920185889</p>
+                <p><strong>Tech Support:</strong> <a href="mailto:support@finsightsbykunal.com" style="color: #66c2ff; text-decoration: underline; font-weight: bold;">support@finsightsbykunal.com</a></p>
 
-<section class="section" id="contact">
-<div class="container">
-<div class="section-title">
-<h2>Contact</h2>
-</div>
+                <p><strong>Working Hours:</strong><br>Mon - Fri: 9:00 AM to 5:00 PM</p>
+            </div>
 
-<form>
-<label for="name">Name</label>
-<input id="name" type="text" required>
+            <div style="flex: 1; min-width: 300px;">
+                <h3 style="border-bottom: 1px solid #ffffff44; padding-bottom: 10px;">Important Links</h3>
+                <ul style="list-style: none; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                    <li><a href="privacy.html" style="color: #ffffff; text-decoration: underline; font-size: 0.95rem;">Privacy Policy</a></li>
+                    <li><a href="grievance.html" style="color: #ffffff; text-decoration: underline; font-size: 0.95rem;">Grievance Redressal</a></li>
+                    <li><a href="complaints.html" style="color: #ffffff; text-decoration: underline; font-size: 0.95rem;">Investor Complaints</a></li>
+                    <li><a href="terms.html" style="color: #ffffff; text-decoration: underline; font-size: 0.95rem;">Terms of Use</a></li>
+                    <li><a href="refund.html" style="color: #ffffff; text-decoration: underline; font-size: 0.95rem;">Refund Policy</a></li>
+                    <li><a href="charter.html" style="color: #ffffff; text-decoration: underline; font-size: 0.95rem;">Investor Charter</a></li>
+                    <li><a href="disclaimer.html" style="color: #ffffff; text-decoration: underline; font-size: 0.95rem;">Disclosures</a></li>
+                    <li><a href="accessibility.html" style="color: #ffffff; text-decoration: underline; font-size: 0.95rem;">Accessibility</a></li>
+                </ul>
+            </div>
+        </div>
 
-<label for="email">Email</label>
-<input id="email" type="email" required>
+        <!-- VISUAL FIX: High contrast light footer sub-box (#e9ecef background, #111111 text, WCAG 1.4.3 & 1.4.1) -->
+        <div style="background-color: #e9ecef; padding: 40px 20px; text-align: center; margin-top: 50px; border-top: 2px solid #cccccc; border-radius: 6px;">
+            
+            <p style="margin-bottom: 20px;">
+                <a href="index.html" style="color: #003366; font-weight: bold; text-decoration: underline; font-size: 1.05rem;">&larr; Back to HOME</a>
+            </p>
 
-<label for="message">Message</label>
-<textarea id="message" required></textarea>
+            <p style="font-size: 0.9rem; color: #111111; max-width: 800px; margin: 0 auto 15px auto; line-height: 1.6;">
+                Investment in securities market are subject to market risks. Read all the related documents carefully before investing. 
+                Registration granted by SEBI and certification from NISM in no way guarantee performance of the intermediary or 
+                provide any assurance of returns to investors.
+            </p>
 
-<button type="submit">Submit</button>
-</form>
+            <p style="font-size: 0.9rem; color: #111111; margin-bottom: 20px;">
+                ODR Portal can be accessed via the following link - 
+                <a href="https://smartodr.in/" target="_blank" rel="noopener" style="color: #003366; text-decoration: underline; font-weight: bold;">https://smartodr.in/</a>
+            </p>
 
-</div>
-</section>
-
-<section class="section disclosure">
-<div class="container">
-<div class="section-title">
-<h2>Disclosures</h2>
-</div>
-
-<div class="disclosure-box">
-<p>
-Investments in securities market are subject to market risks. Read all related documents carefully before investing.
-</p>
-
-<br>
-
-<p>
-This website is for information purposes only and does not constitute investment advice.
-</p>
-
-</div>
-</div>
-</section>
-
-<section class="section">
-<div class="container">
-<div class="section-title">
-<h2>Accessibility Statement</h2>
-</div>
-
-<div class="about-content">
-<p>
-Finsights by Kunal is committed to ensuring digital accessibility for all users. We aim to comply with WCAG 2.1 accessibility standards and continuously improve usability for all visitors.
-</p>
-</div>
-
-</div>
-</section>
-
-</main>
-
-<footer>
-<div class="container">
-
-<div class="footer-links">
-<a href="#">Privacy Policy</a>
-<a href="#">Terms of Use</a>
-<a href="#">Refund Policy</a>
-<a href="#">Disclosures</a>
-<a href="#">Accessibility</a>
-<a href="#">Investor Charter</a>
-</div>
-
-<p>
-© Finsights by Kunal | All Rights Reserved
-</p>
-
-</div>
-</footer>
-
+            <p style="font-size: 0.85rem; color: #333333; margin-top: 20px; border-top: 1px solid #ccc; padding-top: 20px; font-weight: 600;">
+                Copyright © 2023 finsightsbykunal - All Rights Reserved.
+            </p>
+        </div>
+    </footer>
 </body>
 </html>
