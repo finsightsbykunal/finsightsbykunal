@@ -9,9 +9,38 @@
         nav { background-color: #003366; padding: 10px 20px; display: flex; justify-content: space-between; align-items: center; }
         .logo-link { color: white; text-decoration: underline; font-weight: bold; font-size: 1.2rem; }
         main { max-width: 800px; margin: 40px auto; padding: 0 20px; }
-        h1 { color: #003366; border-bottom: 2px solid #003366; padding-bottom: 10px; }
+        
+        /* Heading styling with scroll offset to stay below sticky nav */
+        h1 { 
+            color: #003366; 
+            border-bottom: 2px solid #003366; 
+            padding-bottom: 10px; 
+            scroll-margin-top: 130px !important;
+        }
+        h1:focus { 
+            outline: none !important;
+        }
+
         footer { background-color: #e9ecef; padding: 20px; text-align: center; font-size: 0.85rem; margin-top: 50px; }
         
+        /* Skip link styling for keyboard navigation (WCAG 2.4.1) */
+        .skip-link {
+            position: absolute;
+            top: -100px;
+            left: 10px;
+            background: #003366;
+            color: #ffffff;
+            padding: 12px 20px;
+            z-index: 99999;
+            text-decoration: underline;
+            font-weight: bold;
+            border-radius: 4px;
+            border: 2px solid #ffffff;
+        }
+        .skip-link:focus {
+            top: 10px;
+        }
+
         /* Focus state accessibility */
         a:focus, summary:focus {
             outline: 3px solid #0056b3 !important;
@@ -20,6 +49,9 @@
     </style>
 </head>
 <body>
+
+    <!-- First interactive element on the page -->
+    <a href="#main-heading" class="skip-link">Skip to main content</a>
 
     <nav aria-label="Main Navigation" style="background-color: #003366; padding: 5px 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; min-height: 80px;">
     
@@ -51,7 +83,6 @@
                    display: flex;
                    flex-direction: column; 
                    gap: 12px;">
-            <!-- VISUAL FIX: Links are explicitly underlined (WCAG 1.4.1) -->
             <li><a href="privacy.html" style="color: #003366; text-decoration: underline; font-size: 0.95rem; font-weight: 600;">Privacy Policy</a></li>
             <li><a href="grievance.html" style="color: #003366; text-decoration: underline; font-size: 0.95rem; font-weight: 600;">Grievance Redressal</a></li>
             <li><a href="complaints.html" style="color: #003366; text-decoration: underline; font-size: 0.95rem; font-weight: 600;">Investor Complaints</a></li>
@@ -66,7 +97,7 @@
 </nav>
 
     <main>
-    <h1>INVESTOR CHARTER</h1>
+    <h1 id="main-heading" tabindex="-1" style="color: #003366; line-height: 1.2; scroll-margin-top: 130px;">INVESTOR CHARTER</h1>
     
     <h2>Vision and Mission Statements for investors</h2>
     <ul>
@@ -124,7 +155,6 @@
     <li>Ensure that the Research Analyst has a valid registration certificate.</li>
     <li>Check for SEBI registration number.</li>
     <li>Please refer to the list of all SEBI registered Research Analysts which is available on SEBI website in the following link: 
-        <!-- VISUAL FIX: Distinct underlined link (WCAG 1.4.1 & 1.4.3) -->
         <a href="https://www.sebi.gov.in/sebiweb/other/OtherAction.do?doRecognisedFpi=yes&intmId=14" target="_blank" rel="noopener" style="color: #003366; text-decoration: underline; font-weight: bold; word-break: break-all;">
             https://www.sebi.gov.in/sebiweb/other/OtherAction.do?doRecognisedFpi=yes&intmId=14
         </a> 
@@ -146,7 +176,6 @@
 
 </main>
 
-    <!-- VISUAL FIX: High contrast footer background & text (WCAG 1.4.3 & 1.4.1) -->
     <footer style="background-color: #e9ecef; padding: 40px 20px; text-align: center; margin-top: 50px; border-top: 2px solid #cccccc;">
         
         <p style="margin-bottom: 20px;">
@@ -169,5 +198,14 @@
         </p>
     </footer>
 
+    <!-- Clean Reload Script -->
+    <script>
+      if (window.location.hash) {
+        window.history.replaceState(null, null, window.location.pathname);
+      }
+      window.addEventListener('beforeunload', function() {
+        window.scrollTo(0, 0);
+      });
+    </script>
 </body>
 </html>
